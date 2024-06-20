@@ -1,18 +1,24 @@
 <template>
+    <p>detalles</p>
     <div>
-        <h1>detalles</h1>
+        <h1>{{ pelicula.title }}</h1>
+        <figure>
+            <img :src="'https://image.tmdb.org/t/p/w500' + pelicula.poster_path" :alt="pelicula.title" >
+            <figcaption>{{ pelicula.overview }}</figcaption>
+        </figure>
         <div>
-            <h2>{{ pelicula.title }}</h2>
-            <img :src="'https://image.tmdb.org/t/p/w500' + pelicula.poster_path" :alt="pelicula.title" width="125px">
+            <h3>
+                <strong>generos: </strong>
+            </h3>
             <ul>
-                <li>
-                    <strong>generos: </strong>
-                </li>
                 <li v-for="genero in pelicula.genres" :key="genero.id">
                     {{ genero.name }}
                 </li>
             </ul>
+            <p>fecha de lanzamiento: {{ pelicula.release_date }}</p>
+            <p v-for="spoken in pelicula.spoken_languages" :key="spoken.name">Lenguajes compatibles : {{ spoken.name }}</p>
         </div>
+        <button>❤_🧡</button>
     </div>
 </template>
 

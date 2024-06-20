@@ -2,7 +2,7 @@
     <nav>
         <ul>
             <li>
-                <router-link :to="{name:home}"> home </router-link>
+                <router-link :to="{name:Home}"> home </router-link>
             </li>
             <!-- <li v-for="ruta in rutas " :key="ruta.name">
                 <router-link :to="{name : ruta.name}">
@@ -23,6 +23,12 @@
         }
     }
 </script>
+
+<style>
+    nav{
+        padding: 0;
+    }
+</style>
 
 
 

@@ -3,10 +3,14 @@
     <h1>Peliculas</h1>
     <ul>
       <li v-for="peli in listaPelis" :key="peli.id">
-        <h2>{{ peli.title }}</h2>
-        <img :src="'https://image.tmdb.org/t/p/w500' + peli.poster_path" :alt="peli.title" width="125px">
+        <figure>
+          <img :src="'https://image.tmdb.org/t/p/w500' + peli.poster_path" :alt="peli.title" width="125px">
+          <figcaption>{{ peli.title }} - {{ peli.release_date }}</figcaption>
+          <h2>{{ peli.overview }}</h2>
+        </figure>
         <div>
           <button @click="handlerDetalles(peli.id)">detalles</button>
+          <button>❤</button>
         </div>
       </li>
     </ul>
